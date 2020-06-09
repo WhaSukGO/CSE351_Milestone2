@@ -1,9 +1,9 @@
 *.zip
 *.p
 *.pyc
-*.sh
+# *.sh
 README
-.ipynb
+# .ipynb
 */
 *.pdf
 Milestone_2.ipynb
@@ -11,4 +11,4 @@ sampleSubmission.csv
 sampleSubmission(1).csv
 backup_trainLabels.csv
 original_trainLabels.csv
-*.py
+# *.py
