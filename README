@@ -1,19 +1,11 @@
-This folder contains code to run on a very small data set
-9 malwares, 1 per class, in train and test each.
-data is not included.
+# CSE352_Final_Project
 
-please modify the path in gen_data.py accordingly and run
+1. To retrieve all the preprocessed data (.csv files), please run `Milestone_2.ipynb`
 
-python gen_data.py
+2. `filter.py` is for filtering n number of files for each class.  
+   (Filtered data are already included in `test/` and `train/`)
+   (Full dataset can be found in [Microsoft Malware Classification Challenge (BIG 2015)](https://www.kaggle.com/c/malware-classification/data))
 
-Before run, please change Xgboost wrapper address accordingly in xgboost_multi.py
+3. `single_model.sh`, `unique_gram.py`, `join_grams.py`, `freq_count.py`, `instr_freq.py`, `dll.py`, and `image_fea.py` are from [xiaozhouwang](https://github.com/xiaozhouwang)/**[kaggle_Microsoft_Malware](https://github.com/xiaozhouwang/kaggle_Microsoft_Malware)**
 
-To run:
-# single model
-./single_model.sh
-# if everying goes well, it should print 'loss 2.xxx' in the end
-
-
-# best ensemble model
-./semi_ensemble.sh
-# if everying goes well, it should print 'loss 2.xxx' in the end
+   \*All copyright belongs to their respective owners
