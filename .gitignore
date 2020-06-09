@@ -2,13 +2,20 @@
 *.p
 *.pyc
 # *.sh
-README
+# README
 # .ipynb
-*/
+# */
 *.pdf
-Milestone_2.ipynb
+# Milestone_2.ipynb
 sampleSubmission.csv
 sampleSubmission(1).csv
 backup_trainLabels.csv
 original_trainLabels.csv
 # *.py
+.ipynb_checkpoints/
+.vscode/
+jump_map_train/
+jump_train/
+op_train/
+whasuk/
+gram/
