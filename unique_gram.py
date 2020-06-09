@@ -18,7 +18,13 @@ def load_label(path, label):
 # generate grams dictionary for one file
 def grams_dict(f_name, N=4):
     path = "train/%s.bytes" % f_name
+    print(path)
     one_list = []
+
+    # For each line of a byte file
+    # [1:] means we're not considering addresses.
+    # ''.join(one_list[i:i+N]) generates a 4gram by concatnating 4 subsequent strings
+
     with open(path, 'rb') as f:
         for line in f:
             one_list += line.rstrip().split(" ")[1:]
@@ -55,6 +61,7 @@ def Heap_top(dictionary, label, num=100000):
     for ngram, count in dictionary.iteritems():
         if count > root[0]:
             root = heapq.heapreplace(heap, (count, ngram))
+    # By manipulating a heap, we extract top 100000 features.
     pickle.dump(heap, open('gram/ngram_%i_top%i' % (label, num), 'wb'))
 
 
@@ -63,14 +70,14 @@ if __name__ == '__main__':
     # for label in range(1,10): # take too much memory
     label = int(sys.argv[1])
 
-    # Python 2
-    # print "Gathering 4 grams, Class %i out of 9..."%label
-
     # Python 3
     # Wha Suk Lee
     print("Gathering 4 grams, Class {:d} out of 9...").format(label)
 
+    # Returns ids with the matching label
+    # ['01kcPWA9K2BOxQeS5Rju', '04EjIdbPV5e1XroFOpiN', ...]
     f_labels = load_label('trainLabels.csv', label)
-    print(f_labels)
-    # Heap_top(reduce_dict(f_labels),label)
+
+    # reduce_dict(f_labels) returns a dictionary, of which each key is a unique 4 Gram
+    Heap_top(reduce_dict(f_labels), label)
     # print datetime.now() - start
